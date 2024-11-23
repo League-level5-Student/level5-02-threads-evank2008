@@ -5,6 +5,8 @@ import javax.swing.JOptionPane;
 
 import org.junit.jupiter.api.Test;
 
+import _04_Thread_Pool.WorkQueue;
+
 class DistanceFromCenterTest {
 
 	public static double distance(double x1, double y1, double x2, double y2) {
@@ -72,7 +74,7 @@ class DistanceFromCenterTest {
 
 			});
 		}
-		wq.shutdown();
+		wq.shut();
 		
 		multiEndTime = System.nanoTime();
 		elapsedTimeMulti = (double) (multiEndTime - startTime) / 1_000_000_000.0;

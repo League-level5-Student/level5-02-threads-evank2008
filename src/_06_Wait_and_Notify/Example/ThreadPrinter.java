@@ -6,6 +6,7 @@ public class ThreadPrinter implements Runnable{
 	public ThreadPrinter() {
 		totalThreads++;
 		thread = totalThreads;
+		System.out.println("new tp made. thread "+thread);
 	}
 	
 	@Override

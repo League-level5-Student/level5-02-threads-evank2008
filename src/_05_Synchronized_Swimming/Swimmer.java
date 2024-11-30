@@ -16,7 +16,12 @@ public class Swimmer extends Thread {
 
 	@Override
 	public void run() {
+		for(int i = 0; i<5;i++) {
 		SynchronizedSwimming.takeTurn(this);
+		//waits for the function to end before moving on, so it's forced to wait 100 in
+		//takeTurn and 2000 in swimLap before it can syso
+		System.out.println(name+" finished their turn");
+		}
 		// ...
 	}
 }

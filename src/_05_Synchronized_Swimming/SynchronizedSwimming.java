@@ -28,7 +28,10 @@ public class SynchronizedSwimming {
 	 * the swimmingPool object until the swimmer has finished their lap.
 	 */
 	private static void swimLap(Swimmer swimmer) throws InterruptedException {
+		System.out.println(swimmer.name+" tries swimming");
+		//when synchronized, the code waits here until unlocked.
 		synchronized(swimmingPool) {
+			System.out.println(swimmer.name+" goes swimming");
 		System.out.println(swimmer.name + " started a lap!");
 		Thread.sleep(2000);
 		System.out.println(swimmer.name + " finished!");
@@ -36,10 +39,12 @@ public class SynchronizedSwimming {
 	}
 
 	public static void takeTurn(Swimmer swimmer) {
+		
 		try {
 			swimLap(swimmer);
 			Thread.sleep(100);
 		} catch (InterruptedException ignore) {
+			System.out.println("sus");
 		}
 	}
 }
